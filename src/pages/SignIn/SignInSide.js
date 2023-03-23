@@ -37,6 +37,7 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignInSide() {
+  return <div>SignInSide Form</div>;
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
