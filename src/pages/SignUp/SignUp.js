@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -12,6 +13,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+
 
 
 function Copyright(props) {
@@ -39,6 +41,19 @@ export default function SignUp() {
     });
   };
 
+  const [user,setUser]=useState({
+    firstName:"",
+    lastName:"",
+    email:""
+  })
+
+  const{firstName,lastName,email}=user
+
+  const onInputChange=(e)=>{
+    setUser({...user,[e.target.name]:e.target.value})
+
+  }
+
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
@@ -63,6 +78,8 @@ export default function SignUp() {
                 <TextField
                   autoComplete="given-name"
                   name="firstName"
+                  value={firstName}
+                  onChange={(e)=>onInputChange(e)}
                   required
                   fullWidth
                   id="firstName"
@@ -77,6 +94,8 @@ export default function SignUp() {
                   id="lastName"
                   label="Last Name"
                   name="lastName"
+                  value={lastName}
+                  onChange={(e)=>onInputChange(e)}
                   autoComplete="family-name"
                 />
               </Grid>
@@ -87,6 +106,8 @@ export default function SignUp() {
                   id="email"
                   label="Email Address"
                   name="email"
+                  value={email}
+                  onChange={(e)=>onInputChange(e)}
                   autoComplete="email"
                 />
               </Grid>
