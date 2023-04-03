@@ -1,15 +1,17 @@
+import {link} from 'react-router-dom'
 import "./footer.css";
 
 const Footer = () => {
   return (
-    <div className="footer">
-      <div className="fLists">
+       <div className="footer">
+       <div className="fLists">
         <ul className="fList">
           <li className="fListItem">Countries</li>
           <li className="fListItem">Destinations</li>
           <li className="fListItem">Cities</li>
           
         </ul>
+        
         <ul className="fList">
           <li className="fListItem">About Us </li>
           <li className="fListItem">Company</li>
@@ -30,7 +32,7 @@ const Footer = () => {
           <li className="fListItem">LinkedIn </li>
         </ul>
         <ul className="fList">
-          <li className="fListItem">Curtomer Service</li>
+          <li className="fListItem">Customer Service</li>
           <li className="fListItem">Privacy Policy</li>
           <li className="fListItem">Cookie policy</li>
           <li className="fListItem">Terms of Use</li>
